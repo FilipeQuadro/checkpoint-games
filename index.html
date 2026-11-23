@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Deixa o site responsivo no celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkpoint Games - PCs, notebooks, periféricos, consoles e jogos em Feira de Santana/BA.">
+    <title>Checkpoint Games | Tecnologia e games</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+
+    <!-- Fonte Inter (Sans Serif, pedida no briefing) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS do Bootstrap 5 e ícones do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- CSS local (nosso estilo) -->
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body>
+    <!-- ================= TOPO ================= -->
+    <header id="topo">
+        <!-- Barra de contato: telefone e e-mail sempre visíveis (pedido do cliente) -->
+        <div class="barra-contato">
+            <div class="container d-flex justify-content-between align-items-center">
+                <span class="d-none d-md-inline"><i class="bi bi-truck"></i> Frete grátis nas compras acima de R$ 299</span>
+                <span>
+                    <a href="tel:+557530000000"><i class="bi bi-telephone"></i> (75) 3000-0000</a>
+                    <a href="mailto:contato@checkpointgames.com.br" class="ms-3"><i class="bi bi-envelope"></i>
+                        <span class="d-none d-sm-inline">contato@checkpointgames.com.br</span></a>
+                </span>
+            </div>
+        </div>
+
+        <!-- Menu de navegação (componente Navbar do Bootstrap) -->
+        <nav class="navbar navbar-expand-lg bg-white border-bottom">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <img src="img/logo.svg" alt="Logo Checkpoint Games">
+                    <span class="marca">CHECKPOINT<small>GAMES</small></span>
+                </a>
+
+                <!-- Ícone do carrinho visível no celular, fora do menu -->
+                <a href="#" class="carrinho d-lg-none ms-auto me-3" aria-label="Carrinho">
+                    <i class="bi bi-cart3"></i><span class="contador-carrinho">0</span>
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#section-destaque">Promoções</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#section-vendidos">Mais vendidos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#section-novidades">Jogos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#section-galeria">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    </ul>
+                    <form class="d-flex busca" role="search" id="form-busca">
+                        <input class="form-control" type="search" placeholder="O que deseja buscar?" aria-label="Buscar" id="campo-busca">
+                        <button class="btn btn-primary" type="submit" aria-label="Buscar"><i class="bi bi-search"></i></button>
+                    </form>
+                    <div class="d-flex align-items-center gap-3 ms-lg-3 mt-3 mt-lg-0">
+                        <a href="login.html" class="btn btn-outline-dark"><i class="bi bi-person"></i> Login</a>
+                        <a href="#" class="carrinho d-none d-lg-inline-block" aria-label="Carrinho">
+                            <i class="bi bi-cart3"></i><span class="contador-carrinho">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ================= BANNER (Carousel do Bootstrap) ================= -->
+        <section id="section-banners">
+            <div id="carouselBanners" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselBanners" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Banner 1"></button>
+                    <button type="button" data-bs-target="#carouselBanners" data-bs-slide-to="1" aria-label="Banner 2"></button>
+                    <button type="button" data-bs-target="#carouselBanners" data-bs-slide-to="2" aria-label="Banner 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/banner1.svg" class="d-block w-100" alt="Setup gamer com monitor e PC">
+                        <div class="carousel-caption">
+                            <span class="selo">Novidades da semana</span>
+                            <h1>Tecnologia e games para o seu próximo nível.</h1>
+                            <p>PCs, notebooks, periféricos, consoles e jogos com atendimento de quem entende do assunto.</p>
+                            <a href="#section-vendidos" class="btn btn-primary btn-lg">Ver produtos</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/banner2.svg" class="d-block w-100" alt="Controle de videogame">
+                        <div class="carousel-caption">
+                            <span class="selo">Promoção</span>
+                            <h2>Controles e acessórios com até 20% de desconto.</h2>
+                            <p>Para PC e console. Pagando no Pix, você ganha mais 10% de desconto.</p>
+                            <a href="#section-destaque" class="btn btn-primary btn-lg">Ver promoções</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/banner3.svg" class="d-block w-100" alt="Notebook gamer">
+                        <div class="carousel-caption">
+                            <span class="selo">Para estudo, trabalho e jogos</span>
+                            <h2>Notebooks em até 10x sem juros.</h2>
+                            <p>Ajudamos você a escolher a configuração certa para o seu uso.</p>
+                            <a href="#contato" class="btn btn-primary btn-lg">Falar com um especialista</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanners" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselBanners" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Próximo</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Faixa de benefícios -->
+        <section id="section-beneficios" class="container">
+            <div class="row g-3">
+                <div class="col-6 col-lg-3 beneficio"><i class="bi bi-truck"></i>
+                    <div><strong>Frete grátis</strong><span>Acima de R$ 299</span></div></div>
+                <div class="col-6 col-lg-3 beneficio"><i class="bi bi-credit-card"></i>
+                    <div><strong>Até 10x sem juros</strong><span>No cartão de crédito</span></div></div>
+                <div class="col-6 col-lg-3 beneficio"><i class="bi bi-tag"></i>
+                    <div><strong>10% de desconto</strong><span>Pagando no Pix</span></div></div>
+                <div class="col-6 col-lg-3 beneficio"><i class="bi bi-shield-check"></i>
+                    <div><strong>Compra segura</strong><span>Dados protegidos</span></div></div>
+            </div>
+        </section>
+
+        <!-- ================= DESTAQUE ================= -->
+        <section id="section-destaque" class="container">
+            <div class="destaque row align-items-center g-0">
+                <div class="col-lg-6 p-4 p-lg-5">
+                    <span class="selo">Oferta em destaque</span>
+                    <h2>PC Gamer Ryzen 5, 16GB, SSD 1TB, placa de vídeo 8GB</h2>
+                    <p class="texto-destaque">Pronto para jogar em Full HD com alto desempenho. Montado e testado pela nossa equipe.</p>
+                    <p class="preco-antigo">De R$ 5.899,00</p>
+                    <p class="preco-destaque">R$ 5.299,00 <span>ou R$ 4.769,10 no Pix</span></p>
+                    <!-- Contador regressivo da oferta (feito com JavaScript) -->
+                    <div class="contador" aria-live="polite">
+                        <span>A oferta termina em:</span>
+                        <div><strong id="cont-horas">00</strong><small>horas</small></div>
+                        <div><strong id="cont-min">00</strong><small>min</small></div>
+                        <div><strong id="cont-seg">00</strong><small>seg</small></div>
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-comprar mt-4" data-produto="PC Gamer Ryzen 5">
+                        <i class="bi bi-cart-plus"></i> Comprar agora</button>
+                </div>
+                <div class="col-lg-6">
+                    <img src="img/destaque.svg" class="img-fluid" alt="PC Gamer em destaque">
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= MAIS VENDIDOS (cards) ================= -->
+        <section id="section-vendidos" class="container">
+            <h2>OS MAIS VENDIDOS</h2>
+            <p class="subtitulo">Os produtos que nossos clientes mais levam para casa.</p>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <span class="badge bg-danger desconto">-19%</span>
+                        <img src="img/headset.svg" class="card-img-top" alt="Headset gamer preto com detalhes azuis">
+                        <div class="card-body">
+                            <h5 class="card-title">Headset Gamer Surround 7.1</h5>
+                            <p class="card-text">Som surround e microfone com cancelamento de ruído.</p>
+                            <p class="preco-antigo">R$ 429,90</p>
+                            <p class="preco">R$ 349,90</p>
+                            <p class="parcela">ou 10x de R$ 34,99 sem juros</p>
+                            <button class="btn btn-primary btn-comprar" data-produto="Headset Gamer Surround 7.1"><i class="bi bi-cart-plus"></i> Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="img/mouse.svg" class="card-img-top" alt="Mouse gamer">
+                        <div class="card-body">
+                            <h5 class="card-title">Mouse Gamer 16.000 DPI</h5>
+                            <p class="card-text">Sensor óptico preciso e 7 botões programáveis.</p>
+                            <p class="preco-antigo invisible">R$ 0,00</p>
+                            <p class="preco">R$ 189,90</p>
+                            <p class="parcela">ou 10x de R$ 18,99 sem juros</p>
+                            <button class="btn btn-primary btn-comprar" data-produto="Mouse Gamer 16.000 DPI"><i class="bi bi-cart-plus"></i> Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <span class="badge bg-danger desconto">-15%</span>
+                        <img src="img/keyboard.svg" class="card-img-top" alt="Teclado mecânico">
+                        <div class="card-body">
+                            <h5 class="card-title">Teclado Mecânico ABNT2</h5>
+                            <p class="card-text">Switch blue, iluminação azul e teclas com ç.</p>
+                            <p class="preco-antigo">R$ 329,90</p>
+                            <p class="preco">R$ 279,90</p>
+                            <p class="parcela">ou 10x de R$ 27,99 sem juros</p>
+                            <button class="btn btn-primary btn-comprar" data-produto="Teclado Mecânico ABNT2"><i class="bi bi-cart-plus"></i> Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="img/controller.svg" class="card-img-top" alt="Controle sem fio">
+                        <div class="card-body">
+                            <h5 class="card-title">Controle Sem Fio</h5>
+                            <p class="card-text">Compatível com PC, console e celular.</p>
+                            <p class="preco-antigo invisible">R$ 0,00</p>
+                            <p class="preco">R$ 299,90</p>
+                            <p class="parcela">ou 10x de R$ 29,99 sem juros</p>
+                            <button class="btn btn-primary btn-comprar" data-produto="Controle Sem Fio"><i class="bi bi-cart-plus"></i> Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= NOVIDADES (jogos) ================= -->
+        <section id="section-novidades">
+            <div class="container">
+                <h2>NOVIDADES EM JOGOS</h2>
+                <p class="subtitulo">Lançamentos que acabaram de chegar na loja.</p>
+                <!-- Botões de filtro por plataforma (JavaScript) -->
+                <div class="filtros" role="group" aria-label="Filtrar jogos por plataforma">
+                    <button class="btn btn-filtro ativo" data-filtro="todos">Todos</button>
+                    <button class="btn btn-filtro" data-filtro="pc">PC</button>
+                    <button class="btn btn-filtro" data-filtro="console">Console</button>
+                </div>
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-3" id="lista-jogos">
+                    <div class="col jogo" data-plataforma="pc console">
+                        <div class="card-jogo"><img src="img/jogo-estrada-neon.svg" alt="Capa do jogo Estrada Neon">
+                            <h6>Estrada Neon</h6><span class="plataforma">PC · Console</span><strong>R$ 199,90</strong></div>
+                    </div>
+                    <div class="col jogo" data-plataforma="console">
+                        <div class="card-jogo"><img src="img/jogo-reino-de-aco.svg" alt="Capa do jogo Reino de Aço">
+                            <h6>Reino de Aço</h6><span class="plataforma">Console</span><strong>R$ 249,90</strong></div>
+                    </div>
+                    <div class="col jogo" data-plataforma="pc">
+                        <div class="card-jogo"><img src="img/jogo-orbita-zero.svg" alt="Capa do jogo Órbita Zero">
+                            <h6>Órbita Zero</h6><span class="plataforma">PC</span><strong>R$ 149,90</strong></div>
+                    </div>
+                    <div class="col jogo" data-plataforma="pc console">
+                        <div class="card-jogo"><img src="img/jogo-liga-fc.svg" alt="Capa do jogo Liga FC 27">
+                            <h6>Liga FC 27</h6><span class="plataforma">PC · Console</span><strong>R$ 299,90</strong></div>
+                    </div>
+                    <div class="col jogo" data-plataforma="console">
+                        <div class="card-jogo"><img src="img/jogo-ultimo-sinal.svg" alt="Capa do jogo Último Sinal">
+                            <h6>Último Sinal</h6><span class="plataforma">Console</span><strong>R$ 179,90</strong></div>
+                    </div>
+                    <div class="col jogo" data-plataforma="pc">
+                        <div class="card-jogo"><img src="img/jogo-bloco-a-bloco.svg" alt="Capa do jogo Bloco a Bloco">
+                            <h6>Bloco a Bloco</h6><span class="plataforma">PC</span><strong>R$ 89,90</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= GALERIA ================= -->
+        <section id="section-galeria" class="container">
+            <h2>GALERIA DOS CLIENTES</h2>
+            <p class="subtitulo">Setups montados com produtos da nossa loja. Clique na foto para ampliar.</p>
+            <div class="row g-3">
+                <div class="col-6 col-md-3"><img src="img/galeria-setup.svg" class="foto-galeria" alt="Setup completo de cliente"></div>
+                <div class="col-6 col-md-3"><img src="img/galeria-pc.svg" class="foto-galeria" alt="PC gamer montado"></div>
+                <div class="col-6 col-md-3"><img src="img/galeria-controller.svg" class="foto-galeria" alt="Controle de cliente"></div>
+                <div class="col-6 col-md-3"><img src="img/galeria-headset.svg" class="foto-galeria" alt="Headset em uso"></div>
+                <div class="col-6 col-md-3"><img src="img/galeria-keyboard.svg" class="foto-galeria" alt="Teclado mecânico iluminado"></div>
+                <div class="col-6 col-md-3"><img src="img/galeria-console.svg" class="foto-galeria" alt="Console de nova geração"></div>
+                <div class="col-6 col-md-3"><img src="img/galeria-monitor.svg" class="foto-galeria" alt="Monitor gamer"></div>
+                <div class="col-6 col-md-3"><img src="img/galeria-notebook.svg" class="foto-galeria" alt="Notebook gamer"></div>
+            </div>
+        </section>
+
+        <!-- Janela (modal) para ampliar a foto da galeria -->
+        <div class="modal fade" id="modalGaleria" tabindex="-1" aria-labelledby="tituloModal" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="tituloModal">Foto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body p-0"><img src="" id="imagemModal" class="w-100" alt=""></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= NEWSLETTER ================= -->
+        <section id="section-newsletter">
+            <div class="container d-lg-flex justify-content-between align-items-center">
+                <div class="mb-3 mb-lg-0">
+                    <h3>Receba ofertas e lançamentos</h3>
+                    <p>Um e-mail por semana, sem excesso.</p>
+                </div>
+                <form id="form-newsletter" class="d-flex gap-2" novalidate>
+                    <input type="email" class="form-control" id="email-newsletter" placeholder="Seu melhor e-mail" aria-label="E-mail">
+                    <button type="submit" class="btn btn-dark">Cadastrar</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= RODAPÉ ================= -->
+    <footer id="contato">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <a class="d-flex align-items-center gap-2 mb-3" href="index.html">
+                        <img src="img/logo.svg" alt="Logo Checkpoint Games" class="logo-rodape">
+                        <span class="marca text-white">CHECKPOINT<small>GAMES</small></span>
+                    </a>
+                    <p class="texto-rodape">Tecnologia, games e atendimento de quem também é gamer. Produtos selecionados para trabalho, estudo e diversão.</p>
+                    <div class="redes">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5>Institucional</h5>
+                    <ul><li><a href="#">Sobre nós</a></li><li><a href="#">Política de privacidade</a></li><li><a href="#">Trocas e devoluções</a></li></ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h5>Ajuda</h5>
+                    <ul><li><a href="login.html">Minha conta</a></li><li><a href="#">Formas de pagamento</a></li><li><a href="#">Prazos de entrega</a></li></ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Atendimento</h5>
+                    <ul class="contato">
+                        <li><i class="bi bi-telephone"></i> <a href="tel:+557530000000">(75) 3000-0000</a></li>
+                        <li><i class="bi bi-envelope"></i> <a href="mailto:contato@checkpointgames.com.br">contato@checkpointgames.com.br</a></li>
+                        <li><i class="bi bi-geo-alt"></i> Av. Getúlio Vargas, 1000 – Centro, Feira de Santana/BA</li>
+                        <li><i class="bi bi-clock"></i> Segunda a sábado, das 9h às 18h</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© <span id="ano"></span> Checkpoint Games · Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Botão Voltar ao topo -->
+    <button id="voltar-topo" type="button" class="btn btn-primary" onclick="topo()" aria-label="Voltar ao topo">&uarr; Voltar ao topo</button>
+
+    <!-- Aviso (toast) de produto adicionado ao carrinho -->
+    <div class="toast-container position-fixed bottom-0 start-0 p-3">
+        <div id="avisoCarrinho" class="toast align-items-center text-bg-dark border-0" role="status" aria-live="polite" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body"><i class="bi bi-check-circle-fill text-success"></i> <span id="textoAviso">Produto adicionado ao carrinho!</span></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript: Bootstrap, jQuery e nossos arquivos -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/jquery-script.js"></script>
+</body>
+
+</html>

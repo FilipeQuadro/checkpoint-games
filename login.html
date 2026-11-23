@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Checkpoint Games</title>
+    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+
+<body class="pagina-login">
+    <!-- ================= TOPO (mesmo menu da index) ================= -->
+    <header id="topo">
+        <div class="barra-contato">
+            <div class="container d-flex justify-content-between align-items-center">
+                <span class="d-none d-md-inline"><i class="bi bi-truck"></i> Frete grátis nas compras acima de R$ 299</span>
+                <span>
+                    <a href="tel:+557530000000"><i class="bi bi-telephone"></i> (75) 3000-0000</a>
+                    <a href="mailto:contato@checkpointgames.com.br" class="ms-3"><i class="bi bi-envelope"></i>
+                        <span class="d-none d-sm-inline">contato@checkpointgames.com.br</span></a>
+                </span>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg bg-white border-bottom">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                    <img src="img/logo.svg" alt="Logo Checkpoint Games">
+                    <span class="marca">CHECKPOINT<small>GAMES</small></span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Abrir menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                        <li class="nav-item"><a class="nav-link" href="index.html#section-destaque">Promoções</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#section-vendidos">Mais vendidos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#section-novidades">Jogos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#section-galeria">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                    </ul>
+                    <form class="d-flex busca" role="search" action="index.html">
+                        <input class="form-control" type="search" placeholder="O que deseja buscar?" aria-label="Buscar">
+                        <button class="btn btn-primary" type="submit" aria-label="Buscar"><i class="bi bi-search"></i></button>
+                    </form>
+                    <div class="d-flex align-items-center gap-3 ms-lg-3 mt-3 mt-lg-0">
+                        <a href="login.html" class="btn btn-dark active"><i class="bi bi-person"></i> Login</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-7 col-lg-5">
+
+                <!-- ================= LOGIN ================= -->
+                <section id="section-login" class="caixa-form">
+                    <h1>Entrar na sua conta</h1>
+                    <p class="text-center text-muted">Acompanhe pedidos e salve seus produtos favoritos.</p>
+                    <form id="form-login" onsubmit="login(); return false;">
+                        <div class="mb-3">
+                            <label for="usuario" class="form-label">Usuário</label>
+                            <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Digite seu usuário" autocomplete="username">
+                        </div>
+                        <div class="mb-2">
+                            <label for="senha" class="form-label">Senha</label>
+                            <div class="campo-senha">
+                                <input type="password" class="form-control" name="senha" id="senha" placeholder="Digite sua senha" autocomplete="current-password">
+                                <button type="button" class="ver-senha" data-alvo="senha" aria-label="Mostrar senha"><i class="bi bi-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mb-3 small">
+                            <label><input type="checkbox" class="form-check-input me-1" id="lembrar"> Lembrar de mim</label>
+                            <a href="#" id="esqueci-senha">Esqueci minha senha</a>
+                        </div>
+                        <!-- Mensagem de erro (aparece pelo JavaScript) -->
+                        <div class="alert alert-danger d-none" id="erro-login" role="alert"></div>
+                        <input type="button" value="Entrar" class="btn btn-primary btn-lg w-100" id="bt-login" onclick="login()" />
+                        <p class="dica">Para testar: usuário <b>admin</b> e senha <b>123456</b></p>
+                    </form>
+                </section>
+
+                <!-- ================= CADASTRO ================= -->
+                <section id="section-cadastro">
+                    <div id="botao-cadastrar">
+                        <button type="button" class="btn btn-outline-primary w-100">Não é cadastrado ainda? Cadastre-se</button>
+                    </div>
+
+                    <!-- Formulário de cadastro: começa escondido (display: none no CSS) e aparece com jQuery -->
+                    <form id="form-cadastrar" class="caixa-form" novalidate>
+                        <h2>Criar conta</h2>
+                        <div class="mb-3 text-start">
+                            <label for="nome" class="form-label">Nome completo</label>
+                            <input type="text" class="form-control" id="nome" placeholder="Seu nome">
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="seuemail@exemplo.com">
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label for="telefone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="telefone" placeholder="(00) 00000-0000" maxlength="15">
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label for="nova-senha" class="form-label">Senha (mínimo 6 caracteres)</label>
+                            <div class="campo-senha">
+                                <input type="password" class="form-control" id="nova-senha" placeholder="Crie uma senha">
+                                <button type="button" class="ver-senha" data-alvo="nova-senha" aria-label="Mostrar senha"><i class="bi bi-eye"></i></button>
+                            </div>
+                        </div>
+                        <div class="mb-3 text-start">
+                            <label for="confirma-senha" class="form-label">Confirmar senha</label>
+                            <input type="password" class="form-control" id="confirma-senha" placeholder="Repita a senha">
+                        </div>
+                        <div class="alert alert-danger d-none" id="erro-cadastro" role="alert"></div>
+                        <input type="button" value="Cadastrar" class="btn btn-primary btn-lg w-100" id="bt-cadastrar" onclick="cadastro()" />
+                        <button type="button" class="btn btn-link mt-2" id="voltar-login">Já tenho conta. Entrar</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contato">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <a class="d-flex align-items-center gap-2 mb-3" href="index.html">
+                        <img src="img/logo.svg" alt="Logo Checkpoint Games" class="logo-rodape">
+                        <span class="marca text-white">CHECKPOINT<small>GAMES</small></span>
+                    </a>
+                    <p class="texto-rodape">Tecnologia, games e atendimento de quem também é gamer.</p>
+                    <div class="redes">
+                        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 ms-lg-auto">
+                    <h5>Atendimento</h5>
+                    <ul class="contato">
+                        <li><i class="bi bi-telephone"></i> <a href="tel:+557530000000">(75) 3000-0000</a></li>
+                        <li><i class="bi bi-envelope"></i> <a href="mailto:contato@checkpointgames.com.br">contato@checkpointgames.com.br</a></li>
+                        <li><i class="bi bi-geo-alt"></i> Av. Getúlio Vargas, 1000 – Centro, Feira de Santana/BA</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">© <span id="ano"></span> Checkpoint Games · Todos os direitos reservados</p>
+    </footer>
+
+    <button id="voltar-topo" type="button" class="btn btn-primary" onclick="topo()" aria-label="Voltar ao topo">&uarr; Voltar ao topo</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/jquery-script.js"></script>
+</body>
+
+</html>
