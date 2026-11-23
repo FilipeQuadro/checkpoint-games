@@ -1,0 +1,413 @@
+/* =========================================================
+   Checkpoint Games - estilo.css
+   Cores do briefing: branco para conteúdo, preto e azul para
+   destaques; vermelho só em desconto e verde em confirmações.
+   ========================================================= */
+:root {
+    --preto: #0B0D12;
+    --preto-2: #151922;
+    --azul: #1D4ED8;
+    --azul-escuro: #1E40AF;
+    --azul-claro: #E8EEFF;
+    --cinza-fundo: #F5F6F8;
+    --borda: #E3E5EA;
+    --texto: #111318;
+    --texto-2: #5B6170;
+    --vermelho: #DC2626;
+    --verde: #15803D;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--texto);
+    background-color: #fff;
+}
+
+a { color: inherit; text-decoration: none; }
+
+h2 { font-weight: 800; }
+
+/* Botão primário com o azul da marca */
+.btn-primary {
+    --bs-btn-bg: var(--azul);
+    --bs-btn-border-color: var(--azul);
+    --bs-btn-hover-bg: var(--azul-escuro);
+    --bs-btn-hover-border-color: var(--azul-escuro);
+    --bs-btn-active-bg: var(--azul-escuro);
+    font-weight: 600;
+}
+.btn-outline-primary {
+    --bs-btn-color: var(--azul);
+    --bs-btn-border-color: var(--azul);
+    --bs-btn-hover-bg: var(--azul);
+    --bs-btn-hover-border-color: var(--azul);
+    font-weight: 600;
+}
+
+/* ---------------- TOPO ---------------- */
+.barra-contato {
+    background-color: var(--preto);
+    color: #fff;
+    font-size: 13px;
+    padding: 7px 0;
+}
+.barra-contato a:hover { color: #9DB8FF; }
+
+header img {
+    height: 44px;
+    width: 44px;
+}
+
+.marca {
+    display: flex;
+    flex-direction: column;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: .04em;
+    line-height: 1;
+}
+.marca small {
+    font-size: 9px;
+    letter-spacing: .45em;
+    color: var(--azul);
+    margin-top: 3px;
+}
+
+.navbar .nav-link {
+    font-weight: 600;
+    color: var(--texto);
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active { color: var(--azul); }
+
+.busca input { border-radius: 8px 0 0 8px; min-width: 240px; }
+.busca .btn { border-radius: 0 8px 8px 0; }
+
+.carrinho {
+    position: relative;
+    font-size: 24px;
+}
+.contador-carrinho {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: var(--azul);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+}
+.contador-carrinho.pulo { animation: pulo .4s; }
+@keyframes pulo { 50% { transform: scale(1.4); } }
+
+/* ---------------- BANNER ---------------- */
+#section-banners img {
+    height: 500px;
+    object-fit: cover;
+    object-position: right center;
+}
+.carousel-caption {
+    left: 8%;
+    right: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    max-width: 520px;
+    text-align: left;
+}
+.carousel-caption h1,
+.carousel-caption h2 {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 14px;
+}
+.carousel-caption p { color: #C8CDD8; font-size: 18px; margin-bottom: 24px; }
+
+.selo {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: #9DB8FF;
+    margin-bottom: 12px;
+}
+
+/* ---------------- BENEFÍCIOS ---------------- */
+#section-beneficios {
+    padding: 28px 12px;
+    border-bottom: 1px solid var(--borda);
+}
+.beneficio {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.beneficio i { font-size: 28px; color: var(--azul); }
+.beneficio strong { display: block; font-size: 15px; }
+.beneficio span { color: var(--texto-2); font-size: 13px; }
+
+/* ---------------- DESTAQUE ---------------- */
+#section-destaque { padding-top: 56px; }
+.destaque {
+    background-color: var(--preto);
+    color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.destaque h2 { font-size: 32px; }
+.texto-destaque { color: #C8CDD8; }
+.destaque .preco-antigo { color: #8A8F9A; }
+.preco-destaque { font-size: 36px; font-weight: 800; margin: 0; }
+.preco-destaque span { display: block; font-size: 15px; font-weight: 500; color: #4ADE80; }
+.contador {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.contador > span { color: #C8CDD8; font-size: 14px; margin-right: 4px; }
+.contador div {
+    background-color: var(--preto-2);
+    border: 1px solid #2B3140;
+    border-radius: 8px;
+    padding: 6px 12px;
+    text-align: center;
+    min-width: 64px;
+}
+.contador strong { display: block; font-size: 22px; }
+.contador small { color: #8A8F9A; font-size: 11px; }
+
+/* ---------------- MAIS VENDIDOS ---------------- */
+#section-vendidos {
+    text-align: center;
+    padding-top: 40px;
+}
+#section-vendidos h2,
+#section-novidades h2,
+#section-galeria h2 {
+    font-weight: bold;
+    padding: 20px 0 4px;
+}
+.subtitulo { color: var(--texto-2); margin-bottom: 28px; }
+
+#section-vendidos img {
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+#section-vendidos .card {
+    margin: 5px;
+    border: 1px solid var(--borda);
+    border-radius: 12px;
+    padding: 10px;
+    transition: transform .2s, box-shadow .2s;
+}
+#section-vendidos .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(17, 19, 24, .08);
+}
+.card-title { font-weight: 700; font-size: 17px; }
+.card-text { color: var(--texto-2); font-size: 14px; }
+.desconto {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    font-size: 13px;
+}
+.preco-antigo {
+    color: var(--texto-2);
+    text-decoration: line-through;
+    font-size: 14px;
+    margin: 0;
+}
+#section-vendidos .preco {
+    color: var(--texto);
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0;
+}
+.parcela { color: var(--texto-2); font-size: 13px; }
+
+/* ---------------- NOVIDADES ---------------- */
+#section-novidades {
+    background-color: var(--cinza-fundo);
+    margin-top: 56px;
+    padding: 40px 0 56px;
+    text-align: center;
+}
+.filtros { margin-bottom: 24px; display: flex; justify-content: center; gap: 8px; }
+.btn-filtro {
+    border: 1.5px solid var(--borda);
+    background: #fff;
+    border-radius: 20px;
+    padding: 6px 18px;
+    font-weight: 600;
+}
+.btn-filtro.ativo { background: var(--azul); border-color: var(--azul); color: #fff; }
+.card-jogo {
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: left;
+    height: 100%;
+    border: 1px solid var(--borda);
+}
+.card-jogo img { width: 100%; border-radius: 8px; aspect-ratio: 3 / 4; object-fit: cover; }
+.card-jogo h6 { font-weight: 700; margin: 10px 0 2px; }
+.card-jogo .plataforma { display: block; font-size: 12px; color: var(--texto-2); }
+.card-jogo strong { display: block; margin-top: 6px; }
+
+/* ---------------- GALERIA ---------------- */
+#section-galeria { text-align: center; padding: 40px 12px 56px; }
+.foto-galeria {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: zoom-in;
+    transition: opacity .2s, transform .2s;
+}
+.foto-galeria:hover { opacity: .85; transform: scale(1.02); }
+
+/* ---------------- NEWSLETTER ---------------- */
+#section-newsletter {
+    background-color: var(--azul);
+    color: #fff;
+    padding: 36px 0;
+}
+#section-newsletter h3 { font-weight: 700; margin: 0; }
+#section-newsletter p { margin: 0; color: #DCE5FF; }
+#section-newsletter input { min-width: 300px; }
+
+/* ---------------- RODAPÉ ---------------- */
+footer {
+    position: relative;
+    bottom: 0;
+    background-color: var(--preto);
+    color: #C8CDD8;
+    padding-top: 48px;
+    font-size: 14px;
+}
+footer h5 { color: #fff; font-size: 15px; font-weight: 700; margin-bottom: 14px; }
+footer ul { list-style: none; padding: 0; }
+footer li { margin-bottom: 9px; }
+footer a:hover { color: #fff; }
+footer .contato i { color: #9DB8FF; margin-right: 6px; }
+.logo-rodape { width: 40px; height: 40px; }
+.texto-rodape { max-width: 300px; }
+.redes a {
+    display: inline-grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: var(--preto-2);
+    color: #fff;
+    font-size: 18px;
+    margin-right: 6px;
+}
+.redes a:hover { background: var(--azul); }
+footer p.copyright {
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    margin: 32px 0 0;
+    border-top: 1px solid #23283380;
+    font-size: 13px;
+}
+
+/* Botão Voltar ao topo: fixo no canto (aparece ao rolar - jQuery) */
+#voltar-topo {
+    position: fixed;
+    bottom: 5px;
+    right: 50px;
+    display: none;
+    z-index: 1000;
+    margin-bottom: 15px;
+}
+
+/* ---------------- LOGIN ---------------- */
+.pagina-login main { min-height: 60vh; padding-bottom: 60px; }
+#section-login { margin-top: 60px; }
+#section-login h1 { text-align: center; font-size: 28px; font-weight: 800; }
+#section-login input { width: 100%; }
+.caixa-form {
+    background: #fff;
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(17, 19, 24, .06);
+}
+.campo-senha { position: relative; }
+.ver-senha {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 0;
+    background: none;
+    color: var(--texto-2);
+}
+.dica { text-align: center; font-size: 13px; color: var(--texto-2); margin: 12px 0 0; }
+
+#section-cadastro {
+    padding: 5px;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 16px;
+}
+#form-cadastrar {
+    padding: 32px;
+    display: none;
+}
+#form-cadastrar h2 { font-size: 24px; margin-bottom: 18px; }
+.form-control.is-invalid { border-color: var(--vermelho); }
+
+/* =========================================================
+   RESPONSIVIDADE (media queries)
+   ========================================================= */
+
+/* Tablets e telas menores que 992px */
+@media (max-width: 991.98px) {
+    #section-banners img { height: 420px; }
+    .carousel-caption { max-width: 70%; }
+    .carousel-caption h1,
+    .carousel-caption h2 { font-size: 32px; }
+    .busca input { min-width: 0; }
+    .destaque img { max-height: 320px; width: 100%; object-fit: cover; }
+}
+
+/* Em telas menores, escurece a imagem do banner para o texto ficar legível */
+@media (max-width: 991.98px) {
+    .carousel-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(90deg, rgba(11, 13, 18, .85), rgba(11, 13, 18, .45));
+    }
+    .carousel-caption { z-index: 2; }
+}
+
+/* Celulares (até 576px) */
+@media (max-width: 575.98px) {
+    .marca { font-size: 17px; }
+    #section-banners img { height: 380px; object-position: 70% center; }
+    .carousel-caption { left: 6%; max-width: 88%; }
+    .carousel-caption h1,
+    .carousel-caption h2 { font-size: 24px; }
+    .carousel-caption p { font-size: 15px; }
+    .carousel-caption .btn-lg { font-size: 15px; padding: 8px 16px; }
+    .destaque h2 { font-size: 24px; }
+    .preco-destaque { font-size: 28px; }
+    #section-newsletter input { min-width: 0; }
+    #voltar-topo { right: 12px; }
+    .caixa-form, #form-cadastrar { padding: 22px; }
+}
